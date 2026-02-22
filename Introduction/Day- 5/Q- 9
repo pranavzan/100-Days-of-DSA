@@ -1,0 +1,33 @@
+#include <stdio.h>
+int main() {
+    int p, q, i;
+    scanf("%d", &p);
+    int log1[p];
+    for(i = 0; i < p; i++) {
+        scanf("%d", &log1[i]);
+    }
+    scanf("%d", &q);
+    int log2[q];
+    for(i = 0; i < q; i++) {
+        scanf("%d", &log2[i]);
+    }
+    int i1 = 0, i2 = 0;
+    while(i1 < p && i2 < q) {
+        if(log1[i1] <= log2[i2]) {
+            printf("%d ", log1[i1]);
+            i1++;
+        } else {
+            printf("%d ", log2[i2]);
+            i2++;
+        }
+    }
+    while(i1 < p) {
+        printf("%d ", log1[i1]);
+        i1++;
+    }
+    while(i2 < q) {
+        printf("%d ", log2[i2]);
+        i2++;
+    }
+    return 0;
+}
